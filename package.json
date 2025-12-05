@@ -1,0 +1,26 @@
+{
+  "name": "oomol-cloud-task-sdk",
+  "version": "0.1.0",
+  "description": "TypeScript SDK for Oomol Cloud Task API",
+  "license": "MIT",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "keywords": [
+    "oomol",
+    "cloud-task",
+    "sdk",
+    "typescript"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "typescript": "^5.9.3"
+  }
+}
