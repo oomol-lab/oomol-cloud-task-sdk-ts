@@ -12,12 +12,14 @@ A lightweight, developer-friendly SDK for `https://cloud-task.oomol.com/v1` to c
 
 ## Install
 
-Add files to your project and build with TypeScript. No runtime deps.
+```bash
+npm install oomol-cloud-task-sdk
+```
 
 ## Usage
 
 ```ts
-import { OomolTaskClient } from "./src";
+import { OomolTaskClient } from "oomol-cloud-task-sdk";
 
 const client = new OomolTaskClient({
   apiKey: "YOUR_API_KEY",
