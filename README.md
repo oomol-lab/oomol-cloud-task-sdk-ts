@@ -23,7 +23,6 @@ import { OomolTaskClient } from "oomol-cloud-task-sdk";
 
 const client = new OomolTaskClient({
   apiKey: "YOUR_API_KEY",
-  baseUrl: "https://cloud-task.oomol.com/v1",
 });
 
 const { taskID, result } = await client.createAndWait(
