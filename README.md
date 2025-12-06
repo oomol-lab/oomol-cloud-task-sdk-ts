@@ -37,8 +37,6 @@ const { taskID, result } = await client.createAndWait(
     },
   },
   {
-    intervalMs: 2000,
-    backoff: { strategy: "exp", maxIntervalMs: 10000 },
     onProgress: (p, s) => console.log(`status=${s} progress=${p ?? 0}`),
   }
 );
@@ -61,11 +59,11 @@ console.log(taskID, result);
   - `metadata?`: record
 
 - `awaitResult(taskID, options)` → `TaskResultResponse`
-  - `intervalMs?`: number
+  - `intervalMs?`: number (default: 3000)
   - `timeoutMs?`: number
   - `onProgress?`: callback
   - `signal?`: AbortSignal
-  - `backoff?`: `{ strategy?: 'fixed'|'exp'; maxIntervalMs?: number }`
+  - `backoff?`: `{ strategy?: BackoffStrategy; maxIntervalMs?: number }` (default: `{ strategy: Exponential, maxIntervalMs: 3000 }`)
 
 - `createAndWait(request, options)` → `{ taskID, result }`
 

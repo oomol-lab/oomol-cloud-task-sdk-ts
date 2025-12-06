@@ -47,9 +47,9 @@ export class OomolTaskClient {
   }
 
   async awaitResult<T = unknown>(taskID: string, options: AwaitOptions = {}): Promise<TaskResultResponse<T>> {
-    const intervalBase = options.intervalMs ?? 2000;
-    const maxInterval = options.backoff?.maxIntervalMs ?? 15000;
-    const strategy = options.backoff?.strategy ?? BackoffStrategy.Fixed;
+    const intervalBase = options.intervalMs ?? 3000;
+    const maxInterval = options.backoff?.maxIntervalMs ?? 3000;
+    const strategy = options.backoff?.strategy ?? BackoffStrategy.Exponential;
     const controller = new AbortController();
     const externalSignal = options.signal;
     let aborted = false;
